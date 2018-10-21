@@ -1,0 +1,386 @@
+{
+  "title": "Q&Anon",
+  "theme": {
+    "href": "https://api.typeform.com/themes/y6ngs3"
+  },
+  "workspace": {
+    "href": "https://api.typeform.com/workspaces/LvJJS5"
+  },
+  "settings": {
+    "is_public": true,
+    "is_trial": false,
+    "language": "en",
+    "progress_bar": "percentage",
+    "show_progress_bar": true,
+    "show_typeform_branding": true,
+    "meta": {
+      "allow_indexing": false
+    }
+  },
+  "welcome_screens": [
+    {
+      "ref": "29d849ad-4c33-4d2a-b47e-0b7179aa8e42",
+      "title": "Welcome to Q&Anon! Ask anything to people who think different.",
+      "properties": {
+        "show_button": true,
+        "button_text": "Start"
+      }
+    }
+  ],
+  "thankyou_screens": [
+    {
+      "ref": "default_tys",
+      "title": "Done! Your information was sent perfectly.",
+      "properties": {
+        "show_button": false,
+        "share_icons": false
+      }
+    }
+  ],
+  "fields": [
+    {
+      
+      "title": "Email",
+      "ref": "5481bef9-e38b-43c2-86af-addcb3c5bc1c",
+      "validations": {
+        "required": false
+      },
+      "type": "short_text"
+    },
+    {
+      
+      "title": "On the topic of {TOPIC}, I feel {TAG_1} (1),  {TAG_2} (2) or {TAG_3} (3)",
+      "ref": "8a995c88-f771-4b46-8953-914601747129",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "ref": "3124f4a5-9c76-490c-8984-c7fcbbd860c5",
+            "label": "1"
+          },
+          {
+            "ref": "1022218a-e3ec-49b8-93ff-590d36aedbb6",
+            "label": "2"
+          },
+          {
+            "ref": "b075e738-1de3-439a-a8f3-8fd169cd06ed",
+            "label": "3"
+          }
+        ]
+      },
+      "validations": {
+        "required": true
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "title": "Do you want to...",
+      "ref": "20f77af9-e0c2-4a43-8073-f1c94368ea6c",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "ref": "7f127aaf-9ae0-4b7e-ab55-e728e884f25f",
+            "label": "Ask?"
+          },
+          {
+            "ref": "c96e599e-06c8-49a8-9051-31a53b96754c",
+            "label": "Answer?"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "title": "Ask your question here:",
+      "ref": "f6182542-0601-45e5-a48d-7118e9fe465d",
+      "validations": {
+        "required": false
+      },
+      "type": "long_text"
+    },
+    {
+      "title": "To whom?  (1): {TAG_1},  (2): {TAG_2}, (3): {TAG_3}",
+      "ref": "0133d2da-5f36-438c-959f-28a446367189",
+      "properties": {
+        "randomize": false,
+        "allow_multiple_selection": false,
+        "allow_other_choice": false,
+        "vertical_alignment": true,
+        "choices": [
+          {
+            "ref": "807e26e8-2803-47df-b4a0-b38f595ae23c",
+            "label": "(1)"
+          },
+          {
+            "ref": "68976a2a-c413-4761-8889-7f7688e725f7",
+            "label": "(2)"
+          },
+          {
+            "ref": "55a7e403-ce56-445d-9d31-13e53440ed95",
+            "label": "(3)"
+          }
+        ]
+      },
+      "validations": {
+        "required": false
+      },
+      "type": "multiple_choice"
+    },
+    {
+      "title": "{{QUESTION_1}}",
+      "ref": "e5be5534-dda0-427f-9bff-7eea8707e004",
+      "validations": {
+        "required": false
+      },
+      "type": "short_text"
+    },
+    {
+      "title": "{{QUESTION_2}}",
+      "ref": "bbf02de2-837d-493e-8a61-20af72253c4a",
+      "validations": {
+        "required": false
+      },
+      "type": "short_text"
+    },
+    {
+      "title": "{{QUESTION_3}}",
+      "ref": "05667952-cba5-4af6-9ad1-37cf2b06e71e",
+      "validations": {
+        "required": false
+      },
+      "type": "short_text"
+    }
+  ],
+  "hidden": [
+  ],
+  "logic": [
+    {
+      "type": "field",
+      "ref": "20f77af9-e0c2-4a43-8073-f1c94368ea6c",
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "e5be5534-dda0-427f-9bff-7eea8707e004"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "8a995c88-f771-4b46-8953-914601747129"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "3124f4a5-9c76-490c-8984-c7fcbbd860c5"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "20f77af9-e0c2-4a43-8073-f1c94368ea6c"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "c96e599e-06c8-49a8-9051-31a53b96754c"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "bbf02de2-837d-493e-8a61-20af72253c4a"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "8a995c88-f771-4b46-8953-914601747129"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "1022218a-e3ec-49b8-93ff-590d36aedbb6"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "20f77af9-e0c2-4a43-8073-f1c94368ea6c"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "c96e599e-06c8-49a8-9051-31a53b96754c"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "05667952-cba5-4af6-9ad1-37cf2b06e71e"
+            }
+          },
+          "condition": {
+            "op": "and",
+            "vars": [
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "8a995c88-f771-4b46-8953-914601747129"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "b075e738-1de3-439a-a8f3-8fd169cd06ed"
+                  }
+                ]
+              },
+              {
+                "op": "is",
+                "vars": [
+                  {
+                    "type": "field",
+                    "value": "20f77af9-e0c2-4a43-8073-f1c94368ea6c"
+                  },
+                  {
+                    "type": "choice",
+                    "value": "c96e599e-06c8-49a8-9051-31a53b96754c"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "field",
+              "value": "f6182542-0601-45e5-a48d-7118e9fe465d"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "0133d2da-5f36-438c-959f-28a446367189",
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "thankyou",
+              "value": "default_tys"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "e5be5534-dda0-427f-9bff-7eea8707e004",
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "thankyou",
+              "value": "default_tys"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "bbf02de2-837d-493e-8a61-20af72253c4a",
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "thankyou",
+              "value": "default_tys"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "ref": "05667952-cba5-4af6-9ad1-37cf2b06e71e",
+      "actions": [
+        {
+          "action": "jump",
+          "details": {
+            "to": {
+              "type": "thankyou",
+              "value": "default_tys"
+            }
+          },
+          "condition": {
+            "op": "always",
+            "vars": []
+          }
+        }
+      ]
+    }
+  ],
+  "_links": {
+    "display": "https://picsoung.typeform.com/to/QndLRq"
+  }
+}
