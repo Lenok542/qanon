@@ -1,0 +1,56 @@
+//extends layout.pug (interesting)
+       
+html(lang='en')
+  head
+    title Q&Anon
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // import the webpage's stylesheet
+    link(rel='stylesheet', href='/style.css')
+    // import the webpage's client-side javascript file
+    script(src='/client.js', defer='')
+  body
+    header
+      h1= "Live feed of Q&Anon on the topic '" + topic + "'"
+    main    
+      p.bold These are the questions asked to group 1:
+      ul
+        each q, index in dq1
+          li= q
+          li= "-- " + a1[index]
+          
+      p.bold These are the questions asked to group 2:
+      ul
+        each q, index in dq2
+          li= q
+          li= "-- " + a2[index]
+          
+      p.bold These are the questions asked to group 3:
+      ul
+        each q, index in dq3
+          li= q
+          li= "-- " + a3[index]
+      h1
+        | Create a new Q&Anon:
+      form
+        label Topic
+        input#topic_name_input(name='topic_name', maxlength='100', placeholder='Pinapple on Pizza?', aria-labelledby='submit-dream', type='text')
+        label Add a new group tag (up to 3)
+        input#tag_name_input(name='tag_name', maxlength='100', placeholder='Yummm!', aria-labelledby='submit-dream', type='text')
+        button#add_tag(type='submit') Add Tag
+        input#dq1_name_input(name='dq1_name', maxlength='100', placeholder='A default question to ask Tag1 users', aria-labelledby='submit-dream', type='text')
+        input#dq2_name_input(name='dq2_name', maxlength='100', placeholder='A default question to ask Tag2 users', aria-labelledby='submit-dream', type='text')
+        input#dq3_name_input(name='dq3_name', maxlength='100', placeholder='A default question to ask Tag3 users', aria-labelledby='submit-dream', type='text')
+        button#create_qa(type='submit') Create Q&Anon form
+        // button#restore_pizza(type='submit') Restore default form
+      section.dreams
+        p.message
+    p
+      label List of Tags
+    // Here we are going to populate the list of tags, like:
+    // <li>Tag 1</li>
+    ul#tags_list
+    footer
+      | Idril Geer & Leo Lamsdorff, October 2018
+    //
